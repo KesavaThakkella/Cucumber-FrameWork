@@ -20,6 +20,7 @@ public class ActionsClassPractise {
 				"C://Users//kesava//Downloads//Softwares//chromedriver_win32//chromedriver.exe");
 		driver = new ChromeDriver();
 		String url = "http://mrbool.com/search/";
+		driver.manage().deleteAllCookies();
 		driver.get(url);
 		driver.manage().window().maximize();
 

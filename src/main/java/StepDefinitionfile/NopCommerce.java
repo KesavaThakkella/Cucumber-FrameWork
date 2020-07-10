@@ -37,9 +37,8 @@ public class NopCommerce {
 	}
 
 	@When("^Enter email \"([^\"]*)\" and password \"([^\"]*)\"$")
-	public void Enter_username_and_password(String email, String password) {
+	public void Enter_email_and_password(String email, String password) {
 
-		
 		driver.findElement(By.xpath("//input[@class='email']")).sendKeys(email);
 		driver.findElement(By.xpath("//input[@class='password']")).sendKeys(password);
 
@@ -134,7 +133,6 @@ public class NopCommerce {
 		Select OrderStatusId = new Select(driver.findElement(By.xpath("//select[@name='OrderStatusId']")));
 		Thread.sleep(2000);
 		OrderStatusId.selectByVisibleText("Processing");
-		Thread.sleep(2000);
 		driver.findElement(By.xpath("//button[@id='btnSaveOrderStatus']")).click();
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//button[@id='btnSaveOrderStatus-action-confirmation-submit-button']")).click();
