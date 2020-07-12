@@ -20,8 +20,7 @@ public class LoginStepDefinition {
 		driver = new ChromeDriver();
 		driver.get("https://classic.crmpro.com/index.html?e=1");
 		driver.manage().window().maximize();
-/*
-*/
+
 		/*
 		 * TakesScreenshot ts = (TakesScreenshot) driver; File Source =
 		 * ts.getScreenshotAs(OutputType.FILE); FileUtils.copyFile(Source, new

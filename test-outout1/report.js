@@ -1,35 +1,30 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C:/Users/kesava/git/My-Cucumber/CucumberFramework/src/main/java/Features/tagging.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("C:/Users/kesava/git/My-Cucumber/CucumberFramework/src/main/java/Features/Hashmap.feature");
 formatter.feature({
-  "line": 2,
-  "name": "Free CRM application testing",
+  "line": 1,
+  "name": "Testing hashmap",
   "description": "",
-  "id": "free-crm-application-testing",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "line": 1,
-      "name": "@FunctionalTest"
-    }
-  ]
+  "id": "testing-hashmap",
+  "keyword": "Feature"
 });
 formatter.scenario({
-  "line": 72,
-  "name": "browser closed",
+  "line": 2,
+  "name": "HashMap",
   "description": "",
-  "id": "free-crm-application-testing;browser-closed",
+  "id": "testing-hashmap;hashmap",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
-  "line": 73,
-  "name": "This is a close broswer test",
+  "line": 3,
+  "name": "customer is on crm page enter user and password",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "Tggingstepdefinition.This_is_a_close_broswer_test()"
+  "location": "Hashmap.customer_is_on_crm_page_enter_user_and_password()"
 });
 formatter.result({
-  "duration": 123913000,
-  "status": "passed"
+  "duration": 35513743700,
+  "error_message": "java.lang.IndexOutOfBoundsException: Index: 40, Size: 40\r\n\tat java.util.ArrayList.rangeCheck(Unknown Source)\r\n\tat java.util.ArrayList.get(Unknown Source)\r\n\tat StepDefinitionfile.Hashmap.customer_is_on_crm_page_enter_user_and_password(Hashmap.java:41)\r\n\tat ✽.Given customer is on crm page enter user and password(C:/Users/kesava/git/My-Cucumber/CucumberFramework/src/main/java/Features/Hashmap.feature:3)\r\n",
+  "status": "failed"
 });
 });
