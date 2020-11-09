@@ -12,7 +12,7 @@ public class LoginStepDefinition {
 
 	WebDriver driver;
 
-	@Given("^user is in login page$")
+	@Given("^We Users is in login page$")
 	public void userloginpage() throws Exception {
 
 		System.setProperty("webdriver.chrome.driver",

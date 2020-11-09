@@ -8,9 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
+import Utility.ConfigReader;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import library.Data;
 import library.calendar;
 import library.utility;
 
@@ -21,11 +23,11 @@ public class Mercury {
 	@Given("^user is on titile page$")
 	public void user_is_on_titile_page() {
 
-		System.setProperty("webdriver.chrome.driver",
-				"C://Users//kesava//Downloads//Softwares//chromedriver_win32//chromedriver.exe");
+		ConfigReader config = new ConfigReader();
+
+		System.setProperty("webdriver.chrome.driver", config.getchromepath());
 		driver = new ChromeDriver();
-		String url = "https://www.mercurytravels.co.in/";
-		driver.get(url);
+		driver.get("https://www.mercurytravels.co.in/");
 		driver.manage().window().maximize();
 		driver.findElement(By.xpath("//a[contains(text(),'No, thanks')]")).click();
 
@@ -43,6 +45,7 @@ public class Mercury {
 	public void Enter_destination() {
 
 		driver.findElement(By.xpath("//input[@id='holiday_category_id']")).sendKeys("Hyderabad");
+
 		utility.capturescreenshot(driver, "destiny");
 		System.out.println("Destination is !...Hyderabad...!");
 
@@ -88,6 +91,7 @@ public class Mercury {
 			type_holiday.selectByVisibleText("Island");
 			utility.capturescreenshot(driver, "Island");
 			System.out.println("Type of holiday is Island");
+			System.out.println(Data.monthmap().get(5));
 		} catch (Exception e) {
 
 			e.printStackTrace();

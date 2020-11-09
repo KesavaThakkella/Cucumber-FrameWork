@@ -1,0 +1,7 @@
+browser = chrome
+url = https://www.mercurytravels.co.in/
+username = admin@yourstore.com
+password = admin
+loginbutton = //input[@type='submit']
+
+chromedriverpath = C://Users//kesava//Downloads//Softwares//chromedriver_win32//chromedriver.exe

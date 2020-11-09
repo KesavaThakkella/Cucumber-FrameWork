@@ -13,7 +13,7 @@ public class ActionsClassPractise {
 
 	WebDriver driver;
 
-	@Given("^user is on login page$")
+	@Given("^if user is on login page$")
 	public void user_is_on_login_page() {
 
 		System.setProperty("webdriver.chrome.driver",
@@ -30,10 +30,20 @@ public class ActionsClassPractise {
 	public void click_on_more_menu() throws Exception {
 
 		Actions action = new Actions(driver);
+
 		action.moveToElement(driver.findElement(By.className("menulink"))).build().perform();
 		Thread.sleep(3000);
 		utility.capturescreenshot(driver, "context");
 		driver.findElement(By.xpath("//ul[@class='submenu']//li//a[contains(text(),'Courses')]")).click();
+
+		/*
+		 * 2nd---------------------------way: WebElement menu =
+		 * driver.findElement(By.className("menulink"));
+		 * action.moveToElement(menu).build().perform();
+		 * driver.findElement(By.xpath(
+		 * "//ul[@class='submenu']//li//a[contains(text(),'Courses')]")).click()
+		 * ;
+		 */
 	}
 
 	@Then("^wait until webelement is located$")
