@@ -38,7 +38,7 @@ public class Hashmap {
 		dropdownvalue.selectByVisibleText("36Nights+37Days");
 		System.out.println("size is" + values.size());
 		System.out.println("the fifth position value is : " + values.get(5).getText());
-		for (int i = 0; i <= values.size(); i++) {
+		for (int i = 0; i <=values.size(); i++) {
 			System.out.println(values.get(i).getText());
 
 			Thread.sleep(3000);
