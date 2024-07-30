@@ -4,7 +4,7 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -153,7 +153,7 @@ public class NopCommerce {
 
 		driver.findElement(By.xpath("//input[@id='AddOrderNoteHasDownload']")).click();
 		driver.findElement(By.xpath("//div[@class='qq-upload-button-selector qq-upload-button']")).click();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Robot robot = new Robot();
 		// copy file path into the clipboard
 		StringSelection filelocation = new StringSelection("C:\\Users\\kesava\\Desktop\\order_3.pdf");
@@ -168,11 +168,11 @@ public class NopCommerce {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		// Releasing Enter
 		robot.keyRelease(KeyEvent.VK_ENTER);
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//textarea[@name='AddOrderNoteMessage']"))
 				.sendKeys("Order status has been changed and Invoice(PDF)has been attached successfuuly");
 		driver.findElement(By.xpath("//input[@id='AddOrderNoteDisplayToCustomer']")).click();
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//button[contains(text(),'Add order note')]")).click();
 
 	}
@@ -180,7 +180,7 @@ public class NopCommerce {
 	@Then("^Click on backbutton and select the Start date and End date$")
 	public void Click_on_backbutton_and_select_the_Start_date_and_End_date() throws Exception {
 
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//a[contains(text(),'back to order list')]")).click();
 		driver.findElement(By.xpath("//span[@class='k-picker-wrap k-state-default']//input[@id='StartDate']")).click();
 

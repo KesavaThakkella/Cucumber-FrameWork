@@ -1,6 +1,6 @@
 package StepDefinitionfile;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +14,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import library.Data;
 import library.calendar;
+import library.selectby;
 import library.utility;
 
 public class Mercury {
@@ -38,7 +39,7 @@ public class Mercury {
 
 		String title = driver.getTitle();
 		System.out.println("title of the page :" + title);
-
+		selectby.vertically(driver);
 	}
 
 	@Then("^Select destination from dropdown$")
@@ -58,8 +59,7 @@ public class Mercury {
 			Select duration = new Select(driver.findElement(By.xpath("//select[@id='duration_d']")));
 			duration.selectByVisibleText("7Nights+8Days");
 			/*
-			 * duration.selectByValue("4Nights / 5Days");
-			 * duration.selectByIndex(1);
+			 * duration.selectByValue("4Nights / 5Days"); duration.selectByIndex(1);
 			 * 
 			 * //span[@class='white-text'] //a[contains(text(),'No, thanks')]
 			 */
@@ -102,7 +102,7 @@ public class Mercury {
 	@Then("^click on search holidays icon$")
 	public void click_on_search_holidays_icon() {
 
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.findElement(By.xpath("//button[@class='btn btn-primary btn-search2']")).click();
 		utility.capturescreenshot(driver, "final screen");
 
@@ -111,8 +111,8 @@ public class Mercury {
 	@Then("^Select the Indian holidays screen$")
 	public void Select_the_Indian_holidays_screen() {
 
-		driver.findElement(By
-				.xpath("//a[contains(text(),'Indian Holidays') and @class='ind_link font14' and @title='Indian Holidays']"))
+		driver.findElement(By.xpath(
+				"//a[contains(text(),'Indian Holidays') and @class='ind_link font14' and @title='Indian Holidays']"))
 				.click();
 		driver.findElement(By.xpath("//input[@name='holiday_category' and @type='text']")).sendKeys("Delhi");
 		Select dura = new Select(driver.findElement(By.xpath("//select[@name='nights' and @ id='duration_d']")));
